@@ -25,12 +25,23 @@ for(let prop in collectiveData) {
     // use object's property to customize the message
     switch(prop) {
         case 'signInfo':
-            personalData.push(`Your sign right new is in ${collectiveData[prop][index]}`)
+            personalData.push(`Your sign right new is in ${collectiveData[prop][index]}.`)
             break
         case 'fortuneOutput':
-            personalData.push(`You will have ${collectiveData[prop][index]}`)
+            personalData.push(`You will have ${collectiveData[prop][index]}.`)
             break
         case 'advice':
-            personalData.push
+            personalData.push(`You should ${collectiveData[prop][index]}.`)
+            break
+        default:
+            personalData.push('There is not enough info.')
     }
-};
+}
+
+// assembly the information
+const formatingData() {
+    const formatted = personalData.join('\n')
+    console.log(formatted)
+}
+
+formatingData();
