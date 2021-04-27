@@ -4,7 +4,7 @@
 
 const genRanNum = (num) => {
     // gets a random number between length array to 0
-    return Math.floor(MAth.random() * num);
+    return Math.floor(Math.random() * num);
 }
 
 // stored data, for the personal data
@@ -33,13 +33,16 @@ for(let prop in collectiveData) {
         case 'advice':
             personalData.push(`You should ${collectiveData[prop][index]}.`)
             break
+        case 'popularSaying':
+            personalData.push(`one popular saying for you: ${collectiveData[prop][index]}`)
+            break    
         default:
             personalData.push('There is not enough info.')
     }
 }
 
 // assembly the information
-const formatingData() {
+const formatingData = () => {
     const formatted = personalData.join('\n')
     console.log(formatted)
 }
